@@ -1,0 +1,21 @@
+.home {
+    font-family: 'Pokemon Solid';
+    display: flex;
+    color: #ff0000;
+    height: 100vh;
+}
+
+.home>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.home>div>h1 {
+    font-size: 5em;
+}
+
+.home>div>p {
+    font-size: 1.2em;
+}
