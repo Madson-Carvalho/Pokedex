@@ -1,5 +1,5 @@
 .home {
-    font-family: 'Pokemon Solid';
+    font-family: 'Pokemon Solid' !important;
     display: flex;
     color: #ff0000;
     height: 100vh;
@@ -12,10 +12,40 @@
     width: 100%;
 }
 
-.home>div>h1 {
+.home-title>h1 {
     font-size: 5em;
 }
 
 .home>div>p {
     font-size: 1.2em;
+    padding: 0 .8rem;
+}
+
+.home-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home-title>img {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 66px;
+}
+
+.home>div>a {
+    background-color: #ff0000;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #ffde00;
+    text-decoration: none;
+    font-family: sans-serif;
+    margin-top: 3rem;
+}
+
+.home>div>a:hover {
+    background-color: #3b4cca;
+    color: #ffde00;
 }
