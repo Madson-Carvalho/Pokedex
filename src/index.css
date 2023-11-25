@@ -21,11 +21,11 @@ code {
 @font-face {
   font-family: "Pokemon Hollow";   /*Can be any text*/
   src: local("Pokemon-Hollow"),
-    url("../src/fonts/Pokemon\ Hollow.ttf") format("truetype");
+    url("../src/assets/fonts/Pokemon\ Hollow.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Pokemon Solid";   /*Can be any text*/
   src: local("Pokemon-Solid"),
-    url("../src/fonts/Pokemon\ Solid.ttf") format("truetype");
+    url("../src/assets/fonts/Pokemon\ Solid.ttf") format("truetype");
 }

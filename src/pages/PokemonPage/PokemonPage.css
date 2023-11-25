@@ -1,0 +1,7 @@
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: rgb(247, 173, 63);
+    padding: 1.5rem;
+    row-gap: 1rem;
+}

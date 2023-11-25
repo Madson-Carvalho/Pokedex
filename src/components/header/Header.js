@@ -1,4 +1,4 @@
-import img from "../../images/International_Pokémon_logo.svg.png"
+import img from "../../assets/images/International_Pokémon_logo.svg.png"
 import Nav from "../nav/Nav";
 import './Header.css';
 
