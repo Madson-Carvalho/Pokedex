@@ -1,32 +1,57 @@
 import './PokeCard.css';
 
-const PokeCard = () => {
+const PokeCard = ({pokeData}) => {
+    const capitalizeFirstLetter = (string) => {
+        return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
+    }
+
+    const getSecondColor = (primaryColor) => {
+        const colors = {
+            "black": 'black',
+            "blue": '#01CEFF',
+            "brown": '#B3711B',
+            "gray": '#D8D0C8',
+            "green": '#64E36E',
+            "pink": '#FF7D8D',
+            "purple": '#D878D3',
+            "red": '#FF5656',
+            "white": '#C4C4C4',
+            "yellow": '#FFFC5B'
+        }
+
+        return colors[`${primaryColor}`];
+    }
+
+    const style = {
+        backgroundImage: `linear-gradient(${pokeData.color}, ${getSecondColor(pokeData.color)})`
+    }
+
     return (
-        <div class="card">
-            <div class="content">
-                <div class="top">
-                    <p>Orange</p>
-                    <div class="color"></div>
+        <div className={`card ${pokeData.color}`} style={style}>
+            <div className="content">
+                <div className="top">
+                    <p>{capitalizeFirstLetter(pokeData.types[0].type.name)}</p>
+                    <div className="color" style={{backgroundColor:pokeData.color}}></div>
                 </div>
-                <div class="middle">
+                <div className="middle">
                     <div>
-                        <p>#F9BC61</p>
-                        <p>Charizard</p>
+                        <p>Name:</p>
+                        <p>{capitalizeFirstLetter(pokeData.name)}</p>
                     </div>
-                    <img src="https://www.smashbros.com/wiiu-3ds/images/character/lizardon/main.png" />
+                    <img src={pokeData.sprites.other.official_artwork.front_default} />
                 </div>
-                <div class="bottom">
+                <div className="bottom">
                     <div>
-                        <p>Hue</p>
-                        <p>36</p>
+                        <p>{capitalizeFirstLetter(pokeData.stats[0].stat.name)}</p>
+                        <p>{pokeData.stats[0].base_stat}</p>
                     </div>
                     <div>
-                        <p>Sat</p>
-                        <p>93</p>
+                        <p>{capitalizeFirstLetter(pokeData.stats[1].stat.name)}</p>
+                        <p>{pokeData.stats[1].base_stat}</p>
                     </div>
                     <div>
-                        <p>Lum</p>
-                        <p>68</p>
+                        <p>{capitalizeFirstLetter(pokeData.stats[2].stat.name)}</p>
+                        <p>{pokeData.stats[2].base_stat}</p>
                     </div>
                 </div>
             </div>
