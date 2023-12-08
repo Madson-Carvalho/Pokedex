@@ -1,0 +1,131 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18.75rem;
+    width: 15.625rem;
+    /* background: linear-gradient(rgb(255, 115, 0), rgba(253, 116, 52, 0.808)); */ 
+    border-radius: 8px;
+    justify-self: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+    width: 88%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.content>.top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20%;
+    background-color: white;
+}
+
+.content>.top>p {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.content>.top>.color {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 0.3125rem;
+    margin-right: 0.625rem;
+    border-radius: 50%;
+}
+
+.content>.middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+    /* background: linear-gradient(#F9BC61, #FDE8C9 75%); */
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+.content>.middle>img {
+    width: 60%;
+    max-width: 60%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content>.middle>img:hover {
+    transform: scale(1.5);
+}
+
+.content>.middle>div>p:first-child {
+    margin-bottom: 0.3125rem;
+    font-size: 0.75rem;
+}
+
+.content>.middle>div>p:last-child {
+    margin: 0;
+    font-weight: bold;
+}
+
+.content>.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+}
+
+.content>.bottom>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content>.bottom>div>p:first-child {
+    font-weight: bold;
+}
+
+.black:hover {
+    box-shadow: 0 5px 15px black;
+    transform: scale(1.02);
+}
+.blue:hover {
+    box-shadow: 0 5px 15px blue;
+    transform: scale(1.02);
+}
+.brown:hover {
+    box-shadow: 0 5px 15px brown;
+    transform: scale(1.02);
+}
+.gray:hover {
+    box-shadow: 0 5px 15px gray;
+    transform: scale(1.02);
+}
+.green:hover {
+    box-shadow: 0 5px 15px green;
+    transform: scale(1.02);
+}
+.pink:hover {
+    box-shadow: 0 5px 15px pink;
+    transform: scale(1.02);
+}
+.purple:hover {
+    box-shadow: 0 5px 15px purple;
+    transform: scale(1.02);
+}
+.red:hover {
+    box-shadow: 0 5px 15px red;
+    transform: scale(1.02);
+}
+.white:hover {
+    box-shadow: 0 5px 15px white;
+    transform: scale(1.02);
+}
+.yellow:hover {
+    box-shadow: 0 5px 15px yellow;
+    transform: scale(1.02);
+}

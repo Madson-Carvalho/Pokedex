@@ -1,15 +1,13 @@
 import './App.css';
-import './fonts/Pokemon Hollow.ttf'
-import './fonts/Pokemon Solid.ttf'
-import PokemonPage from './pages/PokemonPage/PokemonPage';
-import Home from './pages/home/Home';
+import './fonts/Pokemon Hollow.ttf';
+import './fonts/Pokemon Solid.ttf';
 
+import CustomRoutes from './routes/routes';
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <PokemonPage />
+      <CustomRoutes />
     </div>
   );
 }
