@@ -1,6 +1,7 @@
 import './App.css';
-import './fonts/Pokemon Hollow.ttf';
-import './fonts/Pokemon Solid.ttf';
+
+import '../src/assets/fonts/Pokemon Hollow.ttf'
+import '../src/assets/fonts/Pokemon Solid.ttf'
 
 import CustomRoutes from './routes/routes';
 

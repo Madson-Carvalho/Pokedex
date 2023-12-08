@@ -79,16 +79,6 @@
     padding-right: 1.875rem;
 }
 
-.content>.bottom>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.content>.bottom>div>p:first-child {
-    font-weight: bold;
-}
-
 .black:hover {
     box-shadow: 0 5px 15px black;
     transform: scale(1.02);

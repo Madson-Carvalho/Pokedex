@@ -1,0 +1,9 @@
+.statistics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statistics>p:first-child {
+    font-weight: bold;
+}
