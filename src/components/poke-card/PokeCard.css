@@ -45,7 +45,7 @@
     justify-content: space-between;
     align-items: center;
     height: 40%;
-    background: linear-gradient(#F9BC61, #FDE8C9 75%);
+    /* background: linear-gradient(#F9BC61, #FDE8C9 75%); */
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
 }

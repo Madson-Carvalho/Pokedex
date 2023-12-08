@@ -1,3 +1,4 @@
+import getSecondariesColors from '../../utils/getSecondariesColors';
 import './PokeCard.css';
 
 const PokeCard = ({pokeData}) => {
@@ -5,25 +6,12 @@ const PokeCard = ({pokeData}) => {
         return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
     }
 
-    const getSecondColor = (primaryColor) => {
-        const colors = {
-            "black": 'black',
-            "blue": '#01CEFF',
-            "brown": '#B3711B',
-            "gray": '#D8D0C8',
-            "green": '#64E36E',
-            "pink": '#FF7D8D',
-            "purple": '#D878D3',
-            "red": '#FF5656',
-            "white": '#C4C4C4',
-            "yellow": '#FFFC5B'
-        }
-
-        return colors[`${primaryColor}`];
+    const style = {
+        backgroundImage: `linear-gradient(${pokeData.color}, ${getSecondariesColors(pokeData.color).borderColor})`
     }
 
-    const style = {
-        backgroundImage: `linear-gradient(${pokeData.color}, ${getSecondColor(pokeData.color)})`
+    const middleStyle = {
+        backgroundImage: `linear-gradient(${getSecondariesColors(pokeData.color).pokeColor.mainColor}, ${getSecondariesColors(pokeData.color).pokeColor.secondaryColor} 75%)`
     }
 
     return (
@@ -33,7 +21,7 @@ const PokeCard = ({pokeData}) => {
                     <p>{capitalizeFirstLetter(pokeData.types[0].type.name)}</p>
                     <div className="color" style={{backgroundColor:pokeData.color}}></div>
                 </div>
-                <div className="middle">
+                <div className="middle" style={middleStyle}>
                     <div>
                         <p>Name:</p>
                         <p>{capitalizeFirstLetter(pokeData.name)}</p>

@@ -8,6 +8,7 @@ import Footer from './../../components/footer/Footer';
 import PokeCard from '../../components/poke-card/PokeCard';
 
 import httpRequest from '../../utils/http';
+import PokeSection from '../../components/pokeSection/PokeSection';
 
 const PokemonPage = () => {
     //Uma lista vazia similar um getter e setter
@@ -17,7 +18,7 @@ const PokemonPage = () => {
     useEffect(() => {
         async function getData() {
             //variável data chama o http request que faz a chamada da API e recupera os dados retornados por ela
-            const data = await httpRequest('https://pokeapi.co/api/v2/pokemon/?limit=50');
+            const data = await httpRequest('https://pokeapi.co/api/v2/pokemon/?limit=150');
             //Função que busca os dados individuais dos pokemons com base no retorno da variavel data
             await getPokemonFullData(data.results);
         }
@@ -38,10 +39,22 @@ const PokemonPage = () => {
             delete response.sprites.other['official-artwork'];
             return response;
         }));
-        //adiciona os dados dos pokemons na variavel pokemonData
-        setPokemonData(fullData);
+        //adiciona os dados dos pokemons na variavel pokemonData agrupados por cor
+        setPokemonData(groupPokemonsByColor(fullData));
     }
-    console.log(pokemonData)
+
+    const groupPokemonsByColor = (data) => {
+        return Object.values(data.reduce((acc, pokeData) => {
+            if (!acc[pokeData.color]) {
+                acc[pokeData.color] = [];
+            }
+
+            acc[pokeData.color].push(pokeData);
+
+            return acc;
+        }, {}));
+    }
+console.log(pokemonData)
     return (
         <>
             <Header />
@@ -49,8 +62,12 @@ const PokemonPage = () => {
                 <div className='cards'>
                     {/* for que percorre os dados do pokemon e pra cada pokemon na variável pokemonData
                     ele renderiza (mostra um pokeCard) e passa pra ele o dado do pokemon em questão */}
-                    {pokemonData.map((data) => (
-                        <PokeCard key={data.id} pokeData={data} />
+                    {pokemonData.map((pokemonOrderPerColor, index) => (
+                        <PokeSection key={index} background={pokemonOrderPerColor[0].color} >
+                            {pokemonOrderPerColor.map((data) => (
+                                <PokeCard key={data.id} pokeData={data} />
+                            ))}
+                        </PokeSection>
                     ))}
                 </div>
             </BodyPage>
