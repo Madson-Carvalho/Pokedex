@@ -1,0 +1,47 @@
+.aboutDescription {
+    background-color: red;
+    font-family: "Rowdies Bold";
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    color: #fff;
+    font-size: 1.875em;
+    justify-content: left;
+    
+   
+}
+
+.aboutDescription >h3 {
+    text-align: left;
+    margin: 2rem;
+    font-family: "Rowdies Bold";
+    
+}
+
+.imgAbout >img {
+    height: 35rem;
+    width: 45rem;
+
+    
+}
+
+.aboutDescription >p {
+    width: 50%;
+    line-height: 3rem;
+} 
+
+.imgAbout {
+    display: flex;
+    
+
+}
+
+.imgAbout >div {
+   display: flex;
+   flex-direction: column;
+   gap: 5rem;
+   padding: 4rem;
+   font-size: large;
+}
+
