@@ -3,6 +3,8 @@ import './PokeCard.css';
 import getSecondariesColors from '../../utils/getSecondariesColors';
 
 import PokeStatistics from './../poke-statistics/PokeStatistics';
+import PokeCardMiddle from '../poke-card-middle/PokeCardMiddle';
+import PokeCardTop from '../poke-card-top/PokeCardTop';
 
 const PokeCard = ({ pokeData }) => {
     const capitalizeFirstLetter = (string) => {
@@ -20,20 +22,13 @@ const PokeCard = ({ pokeData }) => {
     return (
         <div className={`card ${pokeData.color}`} style={style}>
             <div className="content">
-                <div className="top">
-                    <p>{capitalizeFirstLetter(pokeData.types[0].type.name)}</p>
-                    <div className="color" style={{ backgroundColor: pokeData.color }}></div>
-                </div>
-                <div className="middle" style={middleStyle}>
-                    <div>
-                        <p>Name:</p>
-                        <p>{capitalizeFirstLetter(pokeData.name)}</p>
-                    </div>
-                    <img src={pokeData.sprites.other.official_artwork.front_default} />
-                </div>
+                <PokeCardTop type={pokeData.types}
+                    backgroundColor={pokeData.color} colorName={pokeData.color} />
+                <PokeCardMiddle name={capitalizeFirstLetter(pokeData.name)} style={middleStyle}
+                    imagePath={pokeData.sprites.other.official_artwork.front_default} />
                 <div className="bottom">
                     {pokeData.stats.map((stats, index) => (
-                        index < 3 && <PokeStatistics title={capitalizeFirstLetter(stats.stat.name)} baseStat={stats.base_stat} />
+                        index < 3 && <PokeStatistics key={index} title={capitalizeFirstLetter(stats.stat.name)} baseStat={stats.base_stat} />
                     ))}
                 </div>
             </div>

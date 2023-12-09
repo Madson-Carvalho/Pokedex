@@ -1,0 +1,28 @@
+.middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+.middle>img {
+    width: 60%;
+    max-width: 60%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.middle>img:hover {
+    transform: scale(1.5);
+}
+
+.middle>div>p:first-child {
+    margin-bottom: 0.3125rem;
+    font-size: 0.75rem;
+}
+
+.middle>div>p:last-child {
+    margin: 0;
+    font-weight: bold;
+}

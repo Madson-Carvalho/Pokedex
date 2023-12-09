@@ -1,0 +1,39 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    background-color: white;
+}
+
+.pokemon-color>div>h6 .pokemon-type>div>h6 {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.pokemon-type>p {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.top>div>.color {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 0.3125rem;
+    margin-right: 0.625rem;
+    border-radius: 50%;
+}
+
+.pokemon-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    margin-left: 0.625rem;
+}
