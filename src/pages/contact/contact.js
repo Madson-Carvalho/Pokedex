@@ -1,6 +1,6 @@
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
-import './contact.css'
+import './Contact.css'
 
 const Contact = () => {
     return (

@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './../pages/home/Home';
 import PokemonPage from '../pages/PokemonPage/PokemonPage';
 import NotFound404 from '../pages/404/NotFound404';
-import Contact from '../pages/contact/contact';
+import Contact from '../pages/contact/Contact';
+
 
 const CustomRoutes = () => {
     return (
