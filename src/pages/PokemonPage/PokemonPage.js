@@ -10,22 +10,26 @@ import PokeCard from '../../components/poke-card/PokeCard';
 import httpRequest from '../../utils/http';
 import PokeSection from '../../components/pokeSection/PokeSection';
 import PokeModal from '../../components/poke-modal/PokeModal';
+import Loading from '../../components/loading/Loading';
 
 const PokemonPage = () => {
     //Uma lista vazia similar um getter e setter
     const [pokemonData, setPokemonData] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPokemon, setSelectedPokemon] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     //Executa uma vez só para buscar os dados dos pokemons e atribuir a váriável pokemonData
     useEffect(() => {
         async function getData() {
+            setIsLoading(true);
             //variável data chama o http request que faz a chamada da API e recupera os dados retornados por ela
-            const data = await httpRequest('https://pokeapi.co/api/v2/pokemon/?limit=50');
+            const data = await httpRequest('https://pokeapi.co/api/v2/pokemon/?limit=150');
             //Função que busca os dados individuais dos pokemons com base no retorno da variavel data
             await getPokemonFullData(data.results);
         }
         getData();
+        // setIsLoading(false);
     }, [])
 
     const getPokemonFullData = async (initialData) => {
@@ -46,6 +50,7 @@ const PokemonPage = () => {
         }));
         //adiciona os dados dos pokemons na variavel pokemonData agrupados por cor
         setPokemonData(groupPokemonsByColor(fullData));
+        setIsLoading(false);
     }
 
     const groupPokemonsByColor = (data) => {
@@ -76,26 +81,26 @@ const PokemonPage = () => {
             { name: evolutionChain.chain.evolves_to[0].species.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0].species.name) },
             { name: evolutionChain.chain.evolves_to[0].evolves_to[0]?.species?.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0].evolves_to[0]?.species.name) }
         ]
-console.log(chain)
+        console.log(chain)
         return chain;
     }
 
     const getImageByName = (name) => {
         for (const subArray of pokemonData) {
             const foundPokemon = subArray.find(pokemon => pokemon.name === name);
-        
+
             if (foundPokemon) {
-              return foundPokemon.sprites.other.official_artwork.front_default;
+                return foundPokemon.sprites.other.official_artwork.front_default;
             }
-          }
-        
-          return null;
+        }
+
+        return null;
     }
 
     return (
         <>
             <Header />
-            <BodyPage>
+            {isLoading ? <Loading /> :
                 <div className='cards'>
                     {/* for que percorre os dados do pokemon e pra cada pokemon na variável pokemonData
                     ele renderiza (mostra um pokeCard) e passa pra ele o dado do pokemon em questão */}
@@ -110,9 +115,8 @@ console.log(chain)
                             ))}
                         </PokeSection>
                     ))}
-                </div>
-                {isOpen && <PokeModal setIsOpen={closeModal} selectedPokemon={selectedPokemon} />}
-            </BodyPage>
+                </div>}
+            {isOpen && <PokeModal setIsOpen={closeModal} selectedPokemon={selectedPokemon} />}
             <Footer />
         </>
     )

@@ -1,0 +1,16 @@
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    /* position: fixed;
+    top: 0; */
+    background: rgba(0, 0, 0, 0.834) url("../../assets/images/Pikachu_walks.gif") center no-repeat;
+    /* z-index: 1; */
+}
+
+.loader-container>p {
+    color:#fff;
+    top: 30rem;
+    left: 40rem;
+    position: absolute;
+    font-size: 1.5rem;
+}
