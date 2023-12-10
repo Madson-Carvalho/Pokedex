@@ -29,3 +29,11 @@ code {
   src: local("Pokemon-Solid"),
     url("../src/assets/fonts/Pokemon\ Solid.ttf") format("truetype");
 }
+
+
+@font-face {
+  font-family: "Rowdies Bold";   /*Can be any text*/
+  src: local("Rowdies-Bold"),
+    url("../src/assets/fonts/Rowdies-Bold.ttf") format("truetype");
+}
+

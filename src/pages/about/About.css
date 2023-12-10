@@ -1,0 +1,63 @@
+.aboutDescription {
+    background-color: red;
+    font-family: "Rowdies Bold";
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    color: #fff;
+    font-size: 1.875em;
+    justify-content: left;
+    padding: 5rem;
+}
+
+.aboutDescription>h3 {
+    text-align: left;
+    margin: 2rem;
+    font-family: "Rowdies Bold";
+}
+
+.imgAbout>img {
+    height: 40rem;
+    width: 45rem;
+}
+
+.aboutDescription>p {
+    width: 50%;
+    line-height: 3rem;
+}
+
+.imgAbout {
+    display: flex;
+}
+
+.imgAbout>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 4rem;
+    font-size: large;
+}
+
+.aboutUs>div {
+    display: flex;
+    align-items: center;
+    padding: 5rem;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.aboutUs>h1 {
+    padding: 5rem;
+    font-size: 3em;
+    color: #ff0000;
+}
+
+.aboutUs {
+    background-color: #3b4cca;
+}
+
+.imgAbout>div>p {
+    font-size: 1.2em;
+    color: #ff0000;
+}
