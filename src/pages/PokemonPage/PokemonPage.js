@@ -2,7 +2,6 @@ import './PokemonPage.css';
 
 import { useEffect, useState } from 'react';
 
-import BodyPage from './../../components/basePage/BodyPage';
 import Header from './../../components/header/Header';
 import Footer from './../../components/footer/Footer';
 import PokeCard from '../../components/poke-card/PokeCard';
@@ -26,7 +25,7 @@ const PokemonPage = () => {
         async function getData() {
             setIsLoading(true);
             //variável data chama o http request que faz a chamada da API e recupera os dados retornados por ela
-            const data = await httpRequest('https://pokeapi.co/api/v2/pokemon/?limit='+quantity);
+            const data = await httpRequest(`https://pokeapi.co/api/v2/pokemon/?limit=${quantity}`);
             //Função que busca os dados individuais dos pokemons com base no retorno da variavel data
             await getPokemonFullData(data.results);
         }
@@ -79,9 +78,9 @@ const PokemonPage = () => {
 
     const getEvolutionChain = (evolutionChain) => {
         const chain = [
-            { name: evolutionChain.chain.species.name, imageUrl: getImageByName(evolutionChain.chain.species.name) },
-            { name: evolutionChain.chain.evolves_to[0].species.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0].species.name) },
-            { name: evolutionChain.chain.evolves_to[0].evolves_to[0]?.species?.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0].evolves_to[0]?.species.name) }
+            { name: evolutionChain.chain?.species?.name, imageUrl: getImageByName(evolutionChain.chain?.species.name) },
+            { name: evolutionChain.chain.evolves_to[0]?.species.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0]?.species.name) },
+            { name: evolutionChain.chain.evolves_to[0]?.evolves_to[0]?.species?.name, imageUrl: getImageByName(evolutionChain.chain.evolves_to[0]?.evolves_to[0]?.species.name) }
         ]
         console.log(chain)
         return chain;
@@ -104,7 +103,7 @@ const PokemonPage = () => {
             <Header />
             {isLoading ? <Loading /> :
                 <div className='cards'>
-                    <QuantityFilter/>
+                    <QuantityFilter setPokeQuantity={setQuantity} quantity={quantity} />
                     {/* for que percorre os dados do pokemon e pra cada pokemon na variável pokemonData
                     ele renderiza (mostra um pokeCard) e passa pra ele o dado do pokemon em questão */}
                     {pokemonData.map((pokemonOrderPerColor, index) => (
