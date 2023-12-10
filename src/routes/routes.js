@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './../pages/home/Home';
 import PokemonPage from '../pages/PokemonPage/PokemonPage';
 import NotFound404 from '../pages/404/NotFound404';
+import Contact from '../pages/contact/Contact';
 import About from '../pages/about/About';
 
 const CustomRoutes = () => {
@@ -10,6 +11,7 @@ const CustomRoutes = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/pokemon' element={<PokemonPage />} />
+            <Route path='/contact' element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path='*' element={<NotFound404 />} />
         </Routes>

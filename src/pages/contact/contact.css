@@ -1,0 +1,58 @@
+
+.contactUs {
+    background-image: url('../../assets/images/Poke-pikachu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    padding: 5rem 15rem;
+    height: 110vh;
+    width: 100%;
+}
+
+.contactUs>form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3b4cca;
+    width: 40rem;
+    height: 35rem;
+    border-radius: 20px;
+    gap: 2rem;
+}
+
+.contactUs>form>input {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    gap: 2rem;
+}
+
+.contactUs>form>h1 {
+    color: #ffde00;
+}
+
+#idenviar {
+    width: 30%;
+    height: 3.5rem;
+    align-self: center;
+    cursor: pointer;
+    border: solid 2px #fff;
+    background-color: inherit;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#idenviar:hover {
+    background-color: #fff;
+    color: #0b3b5b;
+}
+
+#idmessage {
+    width: 20rem;
+    height: 6rem;
+}

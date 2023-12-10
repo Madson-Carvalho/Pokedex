@@ -11,7 +11,7 @@ function Nav() {
             <Link to="/"><FontAwesomeIcon icon={faHome}/> HOME</Link>
             <Link to="/about"><FontAwesomeIcon icon={faCircleInfo}/> SOBRE</Link>
             <Link to="/pokemon"><FontAwesomeIcon icon={faGamepad}/> POKÉMON</Link>
-            <Link to="#"><FontAwesomeIcon icon={faAddressBook}/> CONTATO</Link>
+            <Link to="/contact"><FontAwesomeIcon icon={faAddressBook}/> CONTATO</Link>
         </nav>
     )
 }
