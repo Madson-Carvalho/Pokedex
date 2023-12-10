@@ -1,0 +1,31 @@
+.poke-evolution {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+
+.poke-evolution>p {
+    font-weight: bold;
+    text-align: left;
+    padding: 1.5rem 1rem 1rem 1.5rem;
+}
+
+.evolution-content {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+}
+
+.evolution-content>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.evolution-content>div>img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.evolution-content>div>p {
+    font-weight: bold;
+}

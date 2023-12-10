@@ -5,7 +5,6 @@ import imgPoke from '../../assets/images/pokemon_pictures.jpg';
 import './About.css';
 import AboutCard from '../../components/aboutCard/AboutCard';
 
-
 const About = () => {
     return (
         <div>

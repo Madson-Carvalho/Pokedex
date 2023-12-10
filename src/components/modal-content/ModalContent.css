@@ -1,0 +1,40 @@
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    color: #000;
+}
+
+.modalContent>img {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modalContent>img:hover {
+    transform: scale(1.5);
+}
+
+.poke-types {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 1rem 1.5rem;
+}
+
+.poke-types>h6 {
+    font-size: 1.3em;
+}
+
+.poke-types>div {
+    display: flex;
+    gap: 1rem;
+}
+
+.poke-types>div>p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+}

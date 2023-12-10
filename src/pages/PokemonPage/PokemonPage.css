@@ -2,3 +2,21 @@
     display: flex;
     flex-direction: column;
 }
+
+.primaryBtn {
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    transition: all 0.25s ease;
+    height: 1.5625rem;
+    width: 1.5625rem;
+    align-self: flex-end;
+    margin: 0.5rem;
+  }
+  
+  .primaryBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+  }
