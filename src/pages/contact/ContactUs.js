@@ -1,8 +1,9 @@
+import './ContactUs.css'
+
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
-import './Contact.css'
 
-const Contact = () => {
+const ContactUs = () => {
     return (
         <div>
             <Header />
@@ -21,4 +22,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactUs;
